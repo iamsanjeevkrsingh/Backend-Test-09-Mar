@@ -81,7 +81,7 @@ const getRepoDetails = async (req, res) => {
         res.json(repoData);
     } catch (error) {
         console.error('GitHub API Error:', error.response?.data || error.message);
-        res.status(404).json({ error: 'Repository not found' });
+        res.status(500).json({ error: 'Failed to get the repo details' });
     }
 };
 
