@@ -36,8 +36,8 @@ Total Development Time: ~3 hours
 
 1. Clone the repository:
 ```bash
-git clone <your-repo-url>
-cd <repo-name>
+git clone https://github.com/iamsanjeevkrsingh/Backend-Test-Mar-9-2025
+cd Backend-Test-Mar-9-2025
 ```
 
 2. Install dependencies:
@@ -47,7 +47,9 @@ npm install
 
 3. Create .env file:
 ```env
+NODE_ENV=development
 PORT=3000
+GITHUB_USERNAME=your_github_username
 GITHUB_TOKEN=your_github_token
 REDIS_URL=redis://localhost:6379
 ```
@@ -64,25 +66,24 @@ npm start
 - **Redis** - Caching layer
 - **Axios** - HTTP client
 - **dotenv** - Environment configuration
-- **Morgan** - HTTP request logger
 
 ## 📌 API Endpoints
 
 ### Get GitHub Profile
 ```http
-GET /api/github/profile
+GET /api/github
 Header: x-access-token: Bearer <your-github-token>
 ```
 
 ### Get Repository Details
 ```http
-GET /api/github/repos/:owner/:repo
+GET /api/github/:repoName
 Header: x-access-token: Bearer <your-github-token>
 ```
 
 ### Create Issue
 ```http
-POST /api/github/repos/:owner/:repo/issues
+POST /api/github/:repoName/issues
 Header: x-access-token: Bearer <your-github-token>
 Body: {
   "title": "Issue title",
